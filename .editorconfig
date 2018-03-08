@@ -1,0 +1,10 @@
+# EditorConfig for Head First Design Patterns examples
+root = true
+
+[*]
+charset = utf-8
+
+[*.{java, py}]
+indent_style = tab
+indent_size = 4
+trim_trailing_whitespace = true
