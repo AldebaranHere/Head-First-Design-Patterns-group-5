@@ -1,12 +1,23 @@
-description = 'Gradle build script for code examples in Head First Design Patterns book'
-apply plugin: 'java'
+plugins {
+	id 'java'
+}
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
-    implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.0'
+	implementation 'javax.servlet:javax.servlet-api:4.0.1'
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(11)
+	}
+
+	compileJava {
+		options.release = 11
+	}
 }
 
 sourceSets {
@@ -15,9 +26,12 @@ sourceSets {
             srcDirs = ['src']
         }
     }
-    test {
-        java {
-            srcDirs = ['src']
-        }
-    }
+
+	test {
+		java {
+			srcDirs = ['test']
+		}
+	}
 }
+
+description = 'Gradle build script for code examples in Head First Design Patterns book'
