@@ -1,5 +1,5 @@
 plugins {
-	id 'java'
+	id 'java-library'
 }
 
 repositories {
@@ -12,11 +12,12 @@ dependencies {
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(11)
+		languageVersion = JavaLanguageVersion.of(17)
+		vendor = JvmVendorSpec.ADOPTIUM
 	}
 
 	compileJava {
-		options.release = 11
+		options.release = 17
 	}
 }
 
@@ -35,3 +36,4 @@ sourceSets {
 }
 
 description = 'Gradle build script for code examples in Head First Design Patterns book'
+group = 'headfirst.designpatterns'
