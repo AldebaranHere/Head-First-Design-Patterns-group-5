@@ -3,7 +3,7 @@ package headfirst.designpatterns.builder.vacation;
 public abstract class Accommodation {
 	String name;
 	Reservation reservation = null;
-	
+
 	public void setReservation(Reservation r) {
 		this.reservation = r;
 	}
@@ -12,15 +12,21 @@ public abstract class Accommodation {
 	}
 	public abstract String getLocation();
 	public String toString() {
-		StringBuffer display = new StringBuffer();
-		display.append("You're staying at " + name);
+		StringBuilder display = new StringBuilder();
+		display.append("You're staying at ")
+			.append(name);
+
 		if (this.reservation != null) {
-			display.append("\nYou have a reservation for arrival date: " + reservation.getArrivalDate() + 
-					", staying for " + reservation.getNights() + " nights");
+			display.append("\nYou have a reservation for arrival date: ")
+				.append(reservation.getArrivalDate()).append(", staying for ")
+				.append(reservation.getNights())
+				.append(" nights");
 		}
-		if (this.getLocation() != "") {
-			display.append(" in " + this.getLocation());
+
+		if (this.getLocation().equals("")) {
+			display.append(" in ").append(this.getLocation());
 		}
+
 		display.append("\n");
 		return display.toString();
 	}
