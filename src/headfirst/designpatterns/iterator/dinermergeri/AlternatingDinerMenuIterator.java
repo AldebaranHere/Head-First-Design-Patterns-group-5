@@ -2,6 +2,7 @@ package headfirst.designpatterns.iterator.dinermergeri;
 
 import java.util.Iterator;
 import java.util.Calendar;
+import java.util.NoSuchElementException;
 
 public class AlternatingDinerMenuIterator implements Iterator<Object> {
 	MenuItem[] items;
@@ -12,6 +13,10 @@ public class AlternatingDinerMenuIterator implements Iterator<Object> {
 		position = Calendar.DAY_OF_WEEK % 2;
 	}
 	public Object next() {
+		if (!hasNext()) {
+			throw new NoSuchElementException();
+		}
+
 		MenuItem menuItem = items[position];
 		position = position + 2;
 		return menuItem;
@@ -23,6 +28,8 @@ public class AlternatingDinerMenuIterator implements Iterator<Object> {
 			return true;
 		}
 	}
+
+	@Override
 	public void remove() {
 		throw new UnsupportedOperationException(
 			"Alternating Diner Menu Iterator does not support remove()");
