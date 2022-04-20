@@ -3,7 +3,7 @@ package headfirst.designpatterns.strategy;
 import java.util.ArrayList;
 
 public class AnimalTest {
- 
+
 	public static void main(String[] args) {
 		AnimalTest at = new AnimalTest();
 		at.makeSomeAnimals();
@@ -12,12 +12,12 @@ public class AnimalTest {
 		Animal dog = new Dog();
 		Animal cat = new Cat();
 		// treat dogs and cats as their supertype, Animal
-		ArrayList<Animal> animals = new ArrayList<Animal>();
+		ArrayList<Animal> animals = new ArrayList<>();
 		animals.add(dog);
 		animals.add(cat);
 		animals.forEach(Animal::makeSound); // can call makeSound on any Animal
 	}
-	
+
 	public abstract class Animal {
 		abstract void makeSound();
 	}
