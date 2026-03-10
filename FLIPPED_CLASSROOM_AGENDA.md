@@ -1,7 +1,7 @@
 # Flip-Classroom Agenda: Design Patterns in Action
 
-**Course:** Software Engineering  
-**Topic:** Applying Creational, Structural, and Behavioral Design Patterns  
+**Course:** Software Engineering
+**Topic:** Applying Creational, Structural, and Behavioral Design Patterns
 **Format:** Collaborative Group Discussion & Implementation (90 Minutes)
 
 ---
@@ -17,7 +17,7 @@ In this session, we will move from theoretical understanding to practical applic
 **Objective:** Decouple sharing logic and apply the Open-Closed Principle.
 - **Location:** `src/headfirst/designpatterns/strategy/challenge/`
 - **Context:** We have different Camera Apps that need to share photos via different methods.
-- **Task:** 
+- **Task:**
     1.  **Implement a New Strategy:** Create a `Slack` or `Discord` strategy class that implements the `ShareStrategy` interface.
     2.  **Set Defaults:** Update `BasicCameraApp` and `CameraPlusApp` to set a *default* sharing strategy in their constructors.
     3.  **Refactor for Flexibility:** Look at the `switch` statement in `PhotoWithPhone.java`. How can you refactor this to make it easier to add a 4th or 5th sharing method without constantly changing the `main` method?
@@ -50,7 +50,7 @@ In this session, we will move from theoretical understanding to practical applic
 - **Task:**
     1.  **The Happy Hour Discount:** Create a `DiscountDecorator` (extending `CondimentDecorator`) that reduces the final cost of any wrapped beverage by 10%.
     2.  **The Tax Man:** Create a `TaxDecorator` that adds a fixed service tax of $0.05 to the final cost.
-    3.  **The Order Matters:** In `StarbuzzCoffee.java`, create two identical "Dark Roast with Mocha" orders. For the first, apply the `DiscountDecorator` *before* the `TaxDecorator`. For the second, apply them in reverse. 
+    3.  **The Order Matters:** In `StarbuzzCoffee.java`, create two identical "Dark Roast with Mocha" orders. For the first, apply the `DiscountDecorator` *before* the `TaxDecorator`. For the second, apply them in reverse.
     4.  **Discussion:** Does the order of decorators change the final price? How does the Decorator pattern handle complex "nested" calculations like this without changing the base `Beverage` code?
 
 ### 🍵 Group 5: The Template Method Pattern (Behavioral)
@@ -77,4 +77,3 @@ In this session, we will move from theoretical understanding to practical applic
 4.  **Wrap-up & Key Takeaways (5m):** Final thoughts from the lecturer on "Pattern Pitfalls."
 
 ---
-*Created with ❤️ by ARONA-chan for Oniichan's Class.*
