@@ -7,17 +7,17 @@ repositories {
 }
 
 dependencies {
-	implementation 'javax.servlet:javax.servlet-api:4.0.1'
+	implementation 'jakarta.servlet:jakarta.servlet-api:6.1.0'
 }
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(25)
 		vendor = JvmVendorSpec.ADOPTIUM
 	}
 
 	compileJava {
-		options.release = 17
+		options.release = 25
 	}
 }
 

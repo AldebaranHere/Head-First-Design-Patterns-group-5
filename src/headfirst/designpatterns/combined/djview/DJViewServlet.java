@@ -1,15 +1,15 @@
 // This code is from Head First Design Patterns first edition
 // and has been removed from the second edition.
 //
-// Left here for those with the first edition, but no guarantees it 
+// Left here for those with the first edition, but no guarantees it
 // will work.
 //
 // 9/15/2020
 //
 package headfirst.designpatterns.combined.djview;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 import java.io.*;
 
 public class DJViewServlet extends HttpServlet {
@@ -33,7 +33,7 @@ public class DJViewServlet extends HttpServlet {
 			HttpServletResponse response)
 					throws IOException, ServletException
 	{
-		BeatModel beatModel = 
+		BeatModel beatModel =
 				(BeatModel)getServletContext().getAttribute("beatModel");
 
 		String bpm = request.getParameter("bpm");
@@ -67,7 +67,7 @@ public class DJViewServlet extends HttpServlet {
 
 		request.setAttribute("beatModel", beatModel);
 
-		RequestDispatcher dispatcher = 
+		RequestDispatcher dispatcher =
 				request.getRequestDispatcher("/djview.jsp");
 		dispatcher.forward(request, response);
 
